@@ -8,65 +8,64 @@
 - License: GPLv2 or later
 - License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Ordini collettivi nei gruppi BuddyPress con wallet condivisi, shop filtrati per gruppo, gestione logistica e interazione sociale.
+Ordini collettivi nei gruppi BuddyPress con wallet condivisi, shop filtrati, logistica e conferma ritiro. Pensato per comunità, GAS e gruppi di acquisto.
 
-## Descrizione 
+## Description 
 
-Questo plugin consente agli utenti di WordPress di partecipare ad acquisti collettivi all'interno dei gruppi BuddyPress. Ogni gruppo può:
+Questo plugin consente ai gruppi BuddyPress di organizzare ordini collettivi su WooCommerce. Ogni gruppo può:
 
-- Visualizzare una vetrina personalizzata dello shop
-- Selezionare prodotti da più vendor
-- Creare ordini collettivi con data di inizio e fine
-- Gestire un wallet condiviso per raccogliere fondi
-- Inviare ordini e fondi ai vendor
-- Ricevere fatture e spedizioni presso un punto di ritiro
-- Confermare il ritiro e visualizzare lo storico
+- Visualizzare una vetrina prodotti filtrata
+- Raccogliere fondi dai membri tramite wallet virtuali
+- Creare ordini collettivi con partecipazione individuale
+- Gestire punti di ritiro (per gruppo o globali)
+- Confermare il ritiro e visualizzare badge 
+- Inviare notifiche automatiche e promemoria
 
-Funziona con:
-- WooCommerce
-- Dokan (multi-vendor)
-- Wallet for WooCommerce
-- BuddyPress
-- BuddyCommerce
+Pensato per gruppi di acquisto solidale (GAS), comunità locali, associazioni e progetti collaborativi.
 
-## Funzionalità Principali 
+## Installation 
 
-* Ordini collettivi per gruppi BuddyPress
-* Wallet utente e wallet di gruppo
-* Shop filtrato per gruppo con prodotti condivisi o esclusivi
-* Dashboard amministratore gruppo per gestione fondi e ordini
-* Notifiche automatiche via email e BuddyPress
-* Punto di ritiro configurabile per ogni ordine
-* Conferma ritiro da parte degli utenti
-* Storico ritiri e badge “Ritirato”
-* Suggerimenti prodotti dai membri del gruppo
+1. Carica la cartella del plugin in `wp-content/plugins/`
+2. Attiva il plugin tramite il menu "Plugin" in WordPress
+3. Assicurati che WooCommerce e BuddyPress siano attivi
+4. Vai nella pagina di un gruppo BuddyPress per iniziare
 
-## Installazione 
+## Frequently Asked Questions 
 
-1. Carica la cartella `woocommerce-groups-orders-for-buddypress` nella directory `/wp-content/plugins/`
-2. Attiva il plugin tramite il menu "Plugin" di WordPress
-3. Assicurati che BuddyPress, WooCommerce, Dokan e Wallet for WooCommerce siano attivi
-4. Configura i gruppi BuddyPress e assegna i prodotti visibili
-5. Gli amministratori dei gruppi possono iniziare a creare ordini collettivi
+= È compatibile con Dokan o altri marketplace? =
+Il plugin è compatibile con WooCommerce standard. Per marketplace multi-vendor, alcune funzioni potrebbero richiedere adattamenti.
 
-## Screenshot 
+= Dove vengono salvati i fondi dei wallet? =
+I fondi sono gestiti come metadati utente e gruppo. Non gestisce transazioni reali, ma simula flussi interni.
 
-1. Vetrina del gruppo con prodotti filtrati
-2. Form di partecipazione all’ordine collettivo
-3. Dashboard amministratore con riepilogo fondi e ordini
-4. Storico ritiri con badge “Ritirato”
+= Posso personalizzare i badge o i punti di ritiro? =
+Sì, puoi modificare gli stili CSS e usare i filtri disponibili nel codice.
+
+## Screenshots 
+
+1. Vetrina prodotti filtrata per gruppo
+2. Form di partecipazione all’ordine
+3. Storico ritiri con badge visivi
+4. Pannello amministratore del gruppo
 
 ## Changelog 
 
 = 1.0 =
-* Versione iniziale del plugin
-* Ordini collettivi con wallet condivisi
-* Shop filtrato per gruppo
-* Notifiche e conferma ritiro
+* Versione iniziale
+* Ordini collettivi per gruppi BuddyPress
+* Wallet condivisi e versamenti
+* Punti di ritiro per gruppo e globali
+* Conferma ritiro con badge
+* Notifiche automatiche e promemoria
 
 ## Upgrade Notice 
 
-Nessun aggiornamento disponibile. Versione stabile 1.0.
+= 1.0 =
+Prima versione stabile. Assicurati che WooCommerce e BuddyPress siano attivi.
+
+## Localization 
+
+Il plugin è completamente localizzato. File `.pot` incluso in `/languages/wgo.pot`.
 
 ## License 
 
