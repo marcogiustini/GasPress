@@ -11,3 +11,8 @@ defined('ABSPATH') || exit;
 foreach (glob(plugin_dir_path(__FILE__) . 'includes/*.php') as $file) {
     require_once $file;
 }
+
+function wgo_load_textdomain() {
+    load_plugin_textdomain('wgo', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+}
+add_action('plugins_loaded', 'wgo_load_textdomain');
