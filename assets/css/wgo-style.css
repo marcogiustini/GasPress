@@ -1,4 +1,4 @@
-/* Badge: Ritirato / Da ritirare */
+/* === Badge di ritiro === */
 .wgo-pickup-badge {
   display: inline-block;
   padding: 2px 6px;
@@ -18,9 +18,10 @@
   color: #fff;
 }
 
-/* Tabelle di riepilogo */
+/* === Tabelle di riepilogo === */
 .group-suggestions-table,
-.group-order-table {
+.group-order-table,
+.group-pickup-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 15px;
@@ -28,18 +29,22 @@
 
 .group-suggestions-table th,
 .group-order-table th,
+.group-pickup-table th,
 .group-suggestions-table td,
-.group-order-table td {
+.group-order-table td,
+.group-pickup-table td {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-.group-suggestions-table th {
+.group-suggestions-table th,
+.group-order-table th,
+.group-pickup-table th {
   background-color: #f5f5f5;
   text-align: left;
 }
 
-/* Pulsanti filtro categoria */
+/* === Pulsanti filtro categoria === */
 .group-shop-filters {
   margin-bottom: 15px;
 }
@@ -52,15 +57,20 @@
   margin-right: 6px;
   cursor: pointer;
   border-radius: 4px;
+  font-size: 13px;
 }
 
 .group-shop-filters .filter-btn:hover {
   background-color: #2980b9;
 }
 
-/* Form suggerimento prodotto */
+/* === Form suggerimento prodotto === */
 #suggest-form {
   margin-top: 15px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
 }
 
 #suggest-form input[type="text"],
@@ -68,6 +78,8 @@
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 #suggest-form input[type="submit"] {
@@ -81,4 +93,48 @@
 
 #suggest-form input[type="submit"]:hover {
   background-color: #1e8449;
+}
+
+/* === Punto di ritiro === */
+.wgo-pickup-point {
+  background-color: #ecf0f1;
+  padding: 10px;
+  border-left: 4px solid #3498db;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* === Conferma ritiro visiva === */
+#pickup-status.confirmed {
+  color: #2ecc71;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* === Layout prodotti === */
+ul.products {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+ul.products li.product {
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: calc(33.333% - 20px);
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+ul.products li.product h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+ul.products li.product p {
+  margin: 5px 0;
+  font-size: 14px;
 }
