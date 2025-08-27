@@ -1,8 +1,3 @@
-<?php
-/**
- * Badge “📦 Ritirato” o “📌 Da ritirare” accanto al nome utente nel gruppo
- */
-
 function wgo_show_pickup_badge($user_id, $group_id) {
     $order = wgo_get_active_order_for_group($group_id);
     if (!$order) return;
