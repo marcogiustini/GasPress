@@ -10,7 +10,7 @@
 
 Ordini collettivi nei gruppi BuddyPress con wallet condivisi, shop filtrati per gruppo, gestione logistica e interazione sociale.
 
-== Descrizione ==
+## Descrizione 
 
 Questo plugin consente agli utenti di WordPress di partecipare ad acquisti collettivi all'interno dei gruppi BuddyPress. Ogni gruppo può:
 
@@ -29,7 +29,7 @@ Funziona con:
 - BuddyPress
 - BuddyCommerce
 
-== Funzionalità Principali ==
+## Funzionalità Principali 
 
 * Ordini collettivi per gruppi BuddyPress
 * Wallet utente e wallet di gruppo
@@ -41,7 +41,7 @@ Funziona con:
 * Storico ritiri e badge “Ritirato”
 * Suggerimenti prodotti dai membri del gruppo
 
-== Installazione ==
+## Installazione 
 
 1. Carica la cartella `woocommerce-groups-orders-for-buddypress` nella directory `/wp-content/plugins/`
 2. Attiva il plugin tramite il menu "Plugin" di WordPress
@@ -49,14 +49,14 @@ Funziona con:
 4. Configura i gruppi BuddyPress e assegna i prodotti visibili
 5. Gli amministratori dei gruppi possono iniziare a creare ordini collettivi
 
-== Screenshot ==
+## Screenshot 
 
 1. Vetrina del gruppo con prodotti filtrati
 2. Form di partecipazione all’ordine collettivo
 3. Dashboard amministratore con riepilogo fondi e ordini
 4. Storico ritiri con badge “Ritirato”
 
-== Changelog ==
+## Changelog 
 
 = 1.0 =
 * Versione iniziale del plugin
@@ -64,10 +64,10 @@ Funziona con:
 * Shop filtrato per gruppo
 * Notifiche e conferma ritiro
 
-== Upgrade Notice ==
+## Upgrade Notice 
 
 Nessun aggiornamento disponibile. Versione stabile 1.0.
 
-== License ==
+## License 
 
 Questo plugin è distribuito sotto la licenza GPLv2 o successiva.
