@@ -16,3 +16,8 @@ function wgo_load_textdomain() {
     load_plugin_textdomain('wgo', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 }
 add_action('plugins_loaded', 'wgo_load_textdomain');
+
+function wgo_enqueue_styles() {
+    wp_enqueue_style('wgo-style', plugin_dir_url(__FILE__) . 'assets/css/wgo-style.css');
+}
+add_action('wp_enqueue_scripts', 'wgo_enqueue_styles');
