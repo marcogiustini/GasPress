@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Woocommerce Groups Orders for Buddypress\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-27 15:45+0200\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Copilot\n"
+
+#: includes/frontend-order-ui.php:10
+msgid "Ordine collettivo attivo"
+msgstr ""
+
+#: includes/frontend-order-ui.php:20
+msgid "Versa Fondi"
+msgstr ""
+
+#: includes/frontend-order-ui.php:35
+msgid "Saldo insufficiente nel tuo wallet."
+msgstr ""
+
+#: includes/close-order.php:50
+msgid "Ordine chiuso con successo."
+msgstr ""
+
+#: includes/group-shop-tab.php:15
+msgid "Vetrina del Gruppo"
+msgstr ""
+
+#: includes/group-shop-tab.php:40
+msgid "Solo per questo gruppo"
+msgstr ""
+
+#: includes/admin-suggestions.php:10
+msgid "Suggerimenti dai membri"
+msgstr ""
+
+#: includes/admin-suggestions.php:45
+msgid "Prodotto aggiunto alla vetrina."
+msgstr ""
+
+#: includes/pickup-confirmation.php:10
+msgid "Conferma Ritiro"
+msgstr ""
+
+#: includes/pickup-confirmation.php:20
+msgid "Hai già confermato il ritiro"
+msgstr ""
+
+#: includes/pickup-confirmation.php:25
+msgid "Ritiro confermato. Grazie!"
+msgstr ""
+
+#: includes/pickup-history.php:10
+msgid "Storico Ritiri"
+msgstr ""
+
+#: includes/pickup-history.php:25
+msgid "Non ancora ritirato"
+msgstr ""
+
+#: includes/pickup-notifications.php:15
+msgid "Promemoria: ritira il tuo ordine"
+msgstr ""
+
+#: includes/pickup-notifications.php:16
+msgid "Hai ancora un ordine da ritirare presso il punto di distribuzione del gruppo."
+msgstr ""
+
+#: includes/pickup-notifications.php:30
+msgid "📦 Ritirato"
+msgstr ""
