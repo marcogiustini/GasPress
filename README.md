@@ -1,12 +1,12 @@
 # Woocommerce Groups Orders for Buddypress 
-Contributors: Marco Giustini
-Tags: woocommerce, buddypress, dokan, group orders, wallet, multi-vendor
-Requires at least: 6.0
-Tested up to: 6.5
-Requires PHP: 7.4
-Stable tag: 1.0
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+- Contributors: Marco Giustini
+- Tags: woocommerce, buddypress, dokan, group orders, wallet, multi-vendor
+- Requires at least: 6.0
+- Tested up to: 6.5
+- Requires PHP: 7.4
+- Stable tag: 1.0
+- License: GPLv2 or later
+- License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Ordini collettivi nei gruppi BuddyPress con wallet condivisi, shop filtrati per gruppo, gestione logistica e interazione sociale.
 
