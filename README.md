@@ -1,5 +1,4 @@
-# Group Orders for BuddyPress and WooCommerce
-Ordini collettivi con Woocommerce e Dokan nei gruppi BuddyPress.
+# Gruppi di acquisto solidali i collettivi con Woocommerce e Dokan nei gruppi BuddyPress.
 
 - Contributors: Marco Giustini  
 - Tags: buddypress, group orders, collective checkout, dokan, woocommerce-compatible  
