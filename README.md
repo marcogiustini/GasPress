@@ -1,42 +1,38 @@
 # Group Orders for BuddyPress and WooCommerce
-- Contributors: Marco Giustini
-- Tags: woocommerce, buddypress, dokan, group orders, wallet, multi-vendor
-- Requires at least: 6.0
-- Tested up to: 6.5
-- Requires PHP: 7.4
-- Stable tag: 1.0
-- License: GPLv2 or later
+Ordini collettivi con Woocommerce e Dokan nei gruppi BuddyPress.
+
+- Contributors: Marco Giustini  
+- Tags: buddypress, group orders, collective checkout, dokan, woocommerce-compatible  
+- Requires at least: 6.0  
+- Tested up to: 6.8  
+- Requires PHP: 7.4  
+- Stable tag: 1.0  
+- License: GPLv2 or later  
 - License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-## Descrizione
+## Description 
 
-Ordini collettivi Woocommerce nei gruppi BuddyPress con wallet condivisi, punti di ritiro, con compatibilità multi-vendor (Dokan). Pensato per comunità, GAS e gruppi di acquisto.
+Questo plugin consente ai gruppi BuddyPress di creare ordini collettivi con prodotti WooCommerce, gestire wallet condivisi, confermare ritiri e smistare automaticamente gli ordini ai venditori Dokan.
 
-## Funzionalità principali
+## Installation 
 
-- Creazione di ordini collettivi all’interno dei gruppi BuddyPress
-- Assegnazione prodotti ai gruppi tramite metabox
-- Partecipazione degli utenti con quantità personalizzate
-- Aggregazione automatica degli ordini
-- Chiusura ordine con smistamento ai venditori Dokan
-- Gestione punti di ritiro globali e per gruppo
-- Conferma ritiro da parte degli utenti
-- Badge visivo “Ritirato” / “Da ritirare”
-- Storico ritiri e promemoria automatici
-- Wallet virtuale per utenti e gruppi
-- Email riepilogative ai venditori
-- Dashboard Dokan con ordini collettivi assegnati
+1. Carica la cartella del plugin in `wp-content/plugins/`
+2. Attiva il plugin da “Plugin” → “Attiva”
+3. Assicurati che WooCommerce, BuddyPress e Dokan siano attivi
 
-## Compatibilità
+## Frequently Asked Questions 
 
-- ✅ WooCommerce
-- ✅ BuddyPress
-- ✅ Dokan Multi-Vendor
-- ✅ Wallet for Woocommerce
-- ✅ WordPress 6.x
+= È compatibile con WPML o Loco Translate? =  
+Sì, il plugin include il file `.pot` ed è completamente internazionalizzabile.
 
-## Installazione
+= Posso usare il plugin senza Dokan? =  
+Sì, ma le funzionalità di smistamento venditori saranno disattivate.
 
-1. Clona o scarica il plugin:
-   ```bash
-   git clone https://github.com/marcogiustini/woocommerce-groups-orders-for-buddypress.git
+## Changelog 
+
+= 1.0 =
+* Versione iniziale con supporto per ordini collettivi, wallet, punti di ritiro e compatibilità Dokan.
+
+## Upgrade Notice 
+
+Aggiorna alla versione 1.0 per abilitare il supporto completo a WooCommerce 6.8 e BuddyPress 12.x.
