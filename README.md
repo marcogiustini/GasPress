@@ -2,7 +2,7 @@
 Gestione ordini per gruppi di acquisto solidali.
 
 **Contributors:** marcogiustini  
-**Tags:** buddypress, woocommerce, dokan, wallet, gas 
+**Tags:** buddypress, woocommerce, dokan, wallet, gas. 
 **Requires at least:** 6.0  
 **Tested up to:** 6.8  
 **Requires PHP:** 7.4  
