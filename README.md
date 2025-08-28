@@ -12,7 +12,7 @@ Gestione ordini per gruppi di acqusto solidali.
 
 # Description
 
-Questo plugin consente ai gruppi BuddyPress di organizzare ordini collettivi solidali con prodotti WooCommerce, gestire wallet condivisi, confermare ritiri e smistare automaticamente gli ordini ai venditori Dokan.
+Questo plugin consente di gestire ordini per i gruppi di acquisto solidali tramite BuddyPress, WooCommerce, Wallet for Woocommerce, Dokan.
 
 ### Funzionalità principali
 
