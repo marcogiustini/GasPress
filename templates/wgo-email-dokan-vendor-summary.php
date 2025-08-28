@@ -36,11 +36,11 @@ function wgo_send_vendor_summary_email($vendor_id) {
         $message .= "\n";
     }
 
-    $message .= "Grazie per la collaborazione!\nIl team Mercato Solidale";
+    $message .= "Grazie per la collaborazione!\nAmministratore";
 
     wp_mail(
         $vendor->user_email,
-        __('Riepilogo ordini collettivi ricevuti', 'WP-GAS-main'),
+        __('Riepilogo ordini collettivi ricevuti', 'gaspress-main'),
         $message
     );
 }
