@@ -1,14 +1,10 @@
 <?php
-/**
- * Interfaccia frontend per partecipazione all’ordine collettivo
- */
-
 defined('ABSPATH') || exit;
 
 function wgo_render_order_ui($group_id) {
     $products = wgo_get_group_products($group_id);
     if (empty($products)) {
-        echo '<p>' . esc_html__('Nessun prodotto disponibile per questo gruppo.', 'gaspress-main') . '</p>';
+        echo '<p>' . esc_html__('Nessun prodotto disponibile per questo gruppo.', 'GasPress-main') . '</p>';
         return;
     }
 
@@ -27,7 +23,7 @@ function wgo_render_order_ui($group_id) {
     }
     echo '</ul>';
 
-    echo '<button type="submit">' . esc_html__('Partecipa all’ordine collettivo', 'gaspress-main') . '</button>';
+    echo '<button type="submit">' . esc_html__('Partecipa all’ordine collettivo', 'GasPress-main') . '</button>';
     echo '</form>';
 }
 
@@ -50,7 +46,6 @@ function wgo_handle_order_submission() {
         }
     }
 
-    // Esegui logica di salvataggio ordine collettivo
-    // es: wgo_save_group_order($group_id, $selected_products, $quantities);
+    // Salvataggio ordine collettivo
 }
 add_action('init', 'wgo_handle_order_submission');
