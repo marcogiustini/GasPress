@@ -1,26 +1,23 @@
 <?php
-function wgo_render_group_shop($group_id) {
-    echo '<div class="wgo-group-shop"><h3>Prodotti del gruppo</h3>';
-    $args = [
-        'post_type' => 'product',
-        'meta_query' => [[
-            'key' => 'wgo_group_id',
-            'value' => $group_id,
-            'compare' => '='
-        ]]
-    ];
-    $products = new WP_Query($args);
-    if ($products->have_posts()) {
-        echo '<ul>';
-        while ($products->have_posts()) {
-            $products->the_post();
-            $product = wc_get_product(get_the_ID());
-            echo '<li>' . get_the_title() . ' - ' . wc_price($product->get_price()) . '</li>';
-        }
-        echo '</ul>';
-        wp_reset_postdata();
-    } else {
-        echo '<p>Nessun prodotto disponibile.</p>';
+/**
+ * Tab vetrina prodotti per gruppi BuddyPress
+ */
+
+defined('ABSPATH') || exit;
+
+function wgo_render_group_shop_tab($group_id) {
+    $products = wgo_get_group_products($group_id);
+    if (empty($products)) {
+        echo '<p>' . esc_html__('Nessun prodotto disponibile per questo gruppo.', 'WP-GAS-main') . '</p>';
+        return;
+    }
+
+    echo '<div class="wgo-group-shop">';
+    foreach ($products as $product_id => $price) {
+        echo '<div class="wgo-product">';
+        echo '<h3>' . esc_html(get_the_title($product_id)) . ' - ' . esc_html(wc_price($price)) . '</h3>';
+        echo '<button data-product="' . esc_attr($product_id) . '">' . esc_html__('Aggiungi all’ordine', 'WP-GAS-main') . '</button>';
+        echo '</div>';
     }
     echo '</div>';
 }
