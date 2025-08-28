@@ -32,8 +32,9 @@ function wgo_render_order_ui($group_id) {
 }
 
 function wgo_handle_order_submission() {
-    $method = isset($_SERVER['REQUEST_METHOD']) ? strtoupper($_SERVER['REQUEST_METHOD']) : '';
-    if ($method !== 'POST') {
+    $method_raw = isset($_SERVER['REQUEST_METHOD']) ? wp_unslash($_SERVER['REQUEST_METHOD']) : '';
+    $method = sanitize_text_field($method_raw);
+    if (strtoupper($method) !== 'POST') {
         return;
     }
 
