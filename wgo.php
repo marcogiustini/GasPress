@@ -5,7 +5,7 @@ Description: Gestione ordini per gruppi di acquisto solidali con BuddyPress, Woo
 Version: 1.0.0
 Author: Marco Giustini
 Author URI: https://github.com/marcogiustini
-Text Domain: WP-GAS-main
+Text Domain: wp-gas-main
 Domain Path: /languages
 Requires at least: 6.0
 Tested up to: 6.8
@@ -47,6 +47,6 @@ add_action('wp_enqueue_scripts', function () use ($plugin_version) {
 add_action('admin_init', function () {
     if (!function_exists('wc_get_product') || !function_exists('groups_get_group_members')) {
         deactivate_plugins(plugin_basename(__FILE__));
-        wp_die(esc_html__('Questo plugin richiede WooCommerce e BuddyPress attivi.', 'WP-GAS-main'));
+        wp_die(esc_html__('Questo plugin richiede WooCommerce e BuddyPress attivi.', 'wp-gas-main'));
     }
 });
