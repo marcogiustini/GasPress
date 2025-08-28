@@ -1,4 +1,4 @@
-# Woocommerce Groups Orders for Buddypress 
+# Group Orders for BuddyPress and WooCommerce
 - Contributors: Marco Giustini
 - Tags: woocommerce, buddypress, dokan, group orders, wallet, multi-vendor
 - Requires at least: 6.0
