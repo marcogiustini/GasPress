@@ -1,28 +1,30 @@
 <?php
-function wgo_render_order_participation_form($group_id) {
-    $order = wgo_get_active_order_for_group($group_id);
-    if (!$order) return;
+/**
+ * Interfaccia frontend per partecipazione all’ordine collettivo
+ */
 
-    $products = get_post_meta($order->ID, 'products', true);
-    echo '<form method="post"><h4>Partecipa all’ordine</h4>';
-    foreach ($products as $product_id => $qty) {
-        $product = wc_get_product($product_id);
-        echo '<label>' . $product->get_name() . '</label>';
-        echo '<input type="number" name="wgo_qty[' . $product_id . ']" min="0" value="0" /><br>';
+defined('ABSPATH') || exit;
+
+function wgo_render_order_ui($group_id) {
+    $products = wgo_get_group_products($group_id);
+    if (empty($products)) {
+        echo '<p>' . esc_html__('Nessun prodotto disponibile per questo gruppo.', 'WP-GAS-main') . '</p>';
+        return;
     }
-    echo '<input type="submit" name="wgo_submit_order" value="Partecipa" />';
+
+    echo '<form method="post" class="wgo-order-form">';
+    echo '<ul class="wgo-product-list">';
+
+    foreach ($products as $product_id => $product) {
+        echo '<li>';
+        echo '<label>';
+        echo '<input type="checkbox" name="wgo_selected_products[]" value="' . esc_attr($product_id) . '">';
+        echo esc_html($product);
+        echo '</label>';
+        echo '</li>';
+    }
+
+    echo '</ul>';
+    echo '<button type="submit">' . esc_html__('Partecipa all’ordine collettivo', 'WP-GAS-main') . '</button>';
     echo '</form>';
-
-    if (isset($_POST['wgo_submit_order']) && isset($_POST['wgo_qty'])) {
-        $user_id = get_current_user_id();
-        update_post_meta($order->ID, 'user_' . $user_id . '_quantities', $_POST['wgo_qty']);
-        wgo_notify_user($user_id, 'Hai partecipato all’ordine collettivo.');
-        echo '<p>Partecipazione registrata.</p>';
-    }
 }
-add_action('bp_after_group_home_content', function () {
-    if (bp_is_group()) {
-        $group_id = bp_get_group_id();
-        wgo_render_order_participation_form($group_id);
-    }
-});
