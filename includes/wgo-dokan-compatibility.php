@@ -1,26 +1,15 @@
 <?php
-/**
- * Compatibilità con Dokan per ordini collettivi
- */
-
 defined('ABSPATH') || exit;
 
-// 📦 Aggiunge badge "Ordine collettivo" nella dashboard Dokan
-add_filter('dokan_order_number', function ($order_number, $order) {
-    $group_id = get_post_meta($order->get_id(), 'wgo_group_id', true);
-    if ($group_id) {
-        $order_number .= ' <span class="wgo-badge wgo-badge-group">' . esc_html__('Ordine collettivo da Gruppo', 'gaspress-GAS-main') . '</span>';
+function wgo_dokan_vendor_is_active($vendor_id) {
+    $active = get_user_meta($vendor_id, 'dokan_enable_selling', true);
+    return $active === 'yes';
+}
+
+function wgo_render_vendor_status_message($vendor_id) {
+    if (!wgo_dokan_vendor_is_active($vendor_id)) {
+        echo '<p>' . esc_html__('Il venditore non è attivo.', 'GasPress-main') . '</p>';
+    } else {
+        echo '<p>' . esc_html__('Venditore attivo e pronto a ricevere ordini.', 'GasPress-main') . '</p>';
     }
-    return $order_number;
-}, 10, 2);
-
-// 🧩 Aggiunge colonna "Punto di ritiro" nella dashboard venditore
-add_filter('dokan_order_listing_columns', function ($columns) {
-    $columns['wgo_pickup'] = esc_html__('Punto di Ritiro', 'gaspress-main');
-    return $columns;
-});
-
-add_action('dokan_order_listing_column_wgo_pickup', function ($order) {
-    $pickup = get_post_meta($order->get_id(), 'wgo_pickup_point', true);
-    echo esc_html($pickup ?: '-');
-});
+}
