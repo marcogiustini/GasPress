@@ -9,7 +9,7 @@ defined('ABSPATH') || exit;
 function wgo_render_group_pickup_field($group_id) {
     $pickup = groups_get_groupmeta($group_id, 'wgo_group_pickup');
     ?>
-    <label for="wgo_group_pickup"><?php echo esc_html__('Punto di ritiro del gruppo:', 'WP-GAS-main'); ?></label><br>
+    <label for="wgo_group_pickup"><?php echo esc_html__('Punto di ritiro del gruppo:', 'gaspress-main'); ?></label><br>
     <input type="text" name="wgo_group_pickup" id="wgo_group_pickup" value="<?php echo esc_attr($pickup); ?>">
     <?php wp_nonce_field('wgo_save_group_pickup', 'wgo_group_pickup_nonce'); ?>
     <?php
