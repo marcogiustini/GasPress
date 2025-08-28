@@ -1,4 +1,5 @@
-# Gruppi di acquisto solidali 
+# Gruppi di acquisto solidali
+Ordini collettivi con Buddypress, Woocommerce, Dokan
 - Contributors: Marco Giustini  
 - Tags: buddypress, group orders, collective checkout, dokan, woocommerce-compatible  
 - Requires at least: 6.0  
