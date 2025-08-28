@@ -1,14 +1,10 @@
 <?php
-/**
- * Interfaccia frontend per partecipazione all’ordine collettivo
- */
-
 defined('ABSPATH') || exit;
 
 function wgo_render_order_ui($group_id) {
     $products = wgo_get_group_products($group_id);
     if (empty($products)) {
-        echo '<p>' . esc_html__('Nessun prodotto disponibile per questo gruppo.', 'WP-GAS-main') . '</p>';
+        echo '<p>' . esc_html__('Nessun prodotto disponibile per questo gruppo.', 'wp-gas-main') . '</p>';
         return;
     }
 
@@ -27,26 +23,19 @@ function wgo_render_order_ui($group_id) {
     }
     echo '</ul>';
 
-    echo '<button type="submit">' . esc_html__('Partecipa all’ordine collettivo', 'WP-GAS-main') . '</button>';
+    echo '<button type="submit">' . esc_html__('Partecipa all’ordine collettivo', 'wp-gas-main') . '</button>';
     echo '</form>';
 }
 
 function wgo_handle_order_submission() {
-    $method_raw = isset($_SERVER['REQUEST_METHOD']) ? wp_unslash($_SERVER['REQUEST_METHOD']) : '';
-    $method = sanitize_text_field($method_raw);
-    if (strtoupper($method) !== 'POST') {
-        return;
-    }
+    $method = sanitize_text_field(wp_unslash($_SERVER['REQUEST_METHOD'] ?? ''));
+    if (strtoupper($method) !== 'POST') return;
 
-    $nonce = isset($_POST['wgo_order_nonce']) ? sanitize_text_field(wp_unslash($_POST['wgo_order_nonce'])) : '';
-    if (!$nonce || !wp_verify_nonce($nonce, 'wgo_submit_order')) {
-        return;
-    }
+    $nonce = sanitize_text_field(wp_unslash($_POST['wgo_order_nonce'] ?? ''));
+    if (!$nonce || !wp_verify_nonce($nonce, 'wgo_submit_order')) return;
 
-    $selected_raw = isset($_POST['wgo_selected_products']) ? wp_unslash($_POST['wgo_selected_products']) : [];
-    $selected_products = array_map('intval', (array) $selected_raw);
-
-    $qty_raw = isset($_POST['wgo_qty']) ? wp_unslash($_POST['wgo_qty']) : [];
+    $selected_products = array_map('intval', (array) wp_unslash($_POST['wgo_selected_products'] ?? []));
+    $qty_raw = wp_unslash($_POST['wgo_qty'] ?? []);
     $quantities = [];
 
     foreach ($qty_raw as $product_id => $qty) {
@@ -57,7 +46,6 @@ function wgo_handle_order_submission() {
         }
     }
 
-    // Esegui logica di salvataggio ordine collettivo
-    // es: wgo_save_group_order($group_id, $selected_products, $quantities);
+    // Salvataggio ordine collettivo
 }
 add_action('init', 'wgo_handle_order_submission');
