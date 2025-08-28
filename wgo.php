@@ -1,24 +1,24 @@
 <?php
-/**
- * Plugin Name: Gruppi di acquisto solidali
- * Description: Gestione di ordini collettivi in Buddypress e Woocommerce
- * Version: 1.0.0
- * Author: Marco Giustini
- * Author URI: https://github.com/marcogiustini
- * Text Domain: wgo
- * Domain Path: /languages
- * Requires at least: 6.0
- * Tested up to: 6.8
- * Requires PHP: 7.4
- * License: GPLv2 or later
- * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- */
+/*
+Plugin Name: WP GAS
+Description: Gestione ordini per gruppi di acquisto solidali con BuddyPress, WooCommerce, Wallet e Dokan.
+Version: 1.0.0
+Author: Marco Giustini
+Author URI: https://github.com/marcogiustini
+Text Domain: WP-GAS-main
+Domain Path: /languages
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
 
 defined('ABSPATH') || exit;
 
 // 🔁 Carica traduzioni
 add_action('plugins_loaded', function () {
-    load_plugin_textdomain('wgo', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+    load_plugin_textdomain('WP-GAS-main', false, dirname(plugin_basename(__FILE__)) . '/languages/');
 });
 
 // 📦 Carica tutti i moduli da /includes/
@@ -36,6 +36,6 @@ add_action('wp_enqueue_scripts', function () {
 add_action('admin_init', function () {
     if (!function_exists('wc_get_product') || !function_exists('groups_get_group_members')) {
         deactivate_plugins(plugin_basename(__FILE__));
-        wp_die(__('Questo plugin richiede WooCommerce e BuddyPress attivi.', 'wgo'));
+        wp_die(__('Questo plugin richiede WooCommerce e BuddyPress attivi.', 'WP-GAS-main'));
     }
 });
