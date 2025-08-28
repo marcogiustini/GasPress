@@ -12,7 +12,7 @@ Gestione ordini collettivi per gruppi di acquisto solidali con WooCommerce, Budd
 
 ## Description 
 
-WP GAS è un plugin pensato per facilitare la gestione degli ordini collettivi all'interno di gruppi di acquisto solidali. Integra WooCommerce, BuddyPress, Dokan e sistemi di Wallet per offrire un'esperienza fluida e collaborativa.
+GasPress è un plugin pensato per facilitare la gestione degli ordini collettivi all'interno di gruppi di acquisto solidali. Integra WooCommerce, BuddyPress, Dokan e sistemi di Wallet per offrire un'esperienza fluida e collaborativa.
 
 ### Funzionalità principali:
 - Assegnazione prodotti a gruppi BuddyPress
@@ -23,16 +23,16 @@ WP GAS è un plugin pensato per facilitare la gestione degli ordini collettivi a
 
 ## Installation 
 
-1. Carica la cartella `WP-GAS-main` nella directory `/wp-content/plugins/`
+1. Carica la cartella `GasPress-main` nella directory `/wp-content/plugins/`
 2. Attiva il plugin tramite il menu "Plugin" di WordPress
 3. Configura i gruppi BuddyPress e i prodotti WooCommerce
 
 ## Frequently Asked Questions 
 
-= È compatibile con WooCommerce multivendor? =
+- È compatibile con WooCommerce multivendor? =
 Sì, il plugin è compatibile con Dokan e altri sistemi multivendor.
 
-= Posso personalizzare i punti di ritiro? =
+- Posso personalizzare i punti di ritiro? =
 Certo. Puoi definire punti di ritiro globali, per gruppo o per venditore.
 
 ## Changelog 
