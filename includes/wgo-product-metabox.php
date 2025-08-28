@@ -46,7 +46,7 @@ function wgo_save_product_group_meta($post_id) {
         isset($_POST['wgo_group_meta_nonce']) &&
         wp_verify_nonce($_POST['wgo_group_meta_nonce'], 'wgo_save_group_meta')
     ) {
-        $group_id = isset($_POST['wgo_group_id']) ? sanitize_text_field($_POST['wgo_group_id']) : '';
+        $group_id = isset($_POST['wgo_group_id']) ? sanitize_text_field(wp_unslash($_POST['wgo_group_id'])) : '';
         update_post_meta($post_id, 'wgo_group_id', $group_id);
     }
 }
