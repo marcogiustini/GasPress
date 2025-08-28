@@ -1,7 +1,7 @@
 # Gruppi di acquisto solidali
-Ordini collettivi con Buddypress, Woocommerce, Dokan
+Ordini collettivi con Buddypress, Woocommerce, Wallet for Woocommerce, Dokan
 - Contributors: Marco Giustini  
-- Tags: buddypress, group orders, collective checkout, dokan, woocommerce-compatible  
+- Tags: buddypress, woocommerce, wallet for woocommerce, dokan, group orders  
 - Requires at least: 6.0  
 - Tested up to: 6.8  
 - Requires PHP: 7.4  
@@ -9,7 +9,7 @@ Ordini collettivi con Buddypress, Woocommerce, Dokan
 - License: GPLv2 or later  
 - License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-## Short Description 
+## Description 
 
 Questo plugin consente ai gruppi BuddyPress di creare ordini collettivi con prodotti WooCommerce, gestire wallet condivisi, confermare ritiri e smistare automaticamente gli ordini ai venditori Dokan.
 
