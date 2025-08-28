@@ -1,5 +1,5 @@
-# Gruppi di acquisto solidali
-Ordini collettivi con BuddyPress e WooCommerce per GAS.
+# WP GAS
+Gestione ordini per gruppi di acqusto solidali.
 
 **Contributors:** marcogiustini  
 **Tags:** buddypress, woocommerce, dokan, wallet, group orders  
