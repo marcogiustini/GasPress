@@ -1,5 +1,5 @@
 # Gruppi di acquisto solidali 
-Ordini collettivi con BuddyPress, WooCommerce, Wallet e Dokan per gruppi di acquisto solidali.
+Ordini collettivi con BuddyPress, WooCommerce e Dokan per gruppi di acquisto solidali.
 
 - Contributors: marcogiustini  
 - Tags: buddypress, woocommerce, dokan, wallet, group orders  
