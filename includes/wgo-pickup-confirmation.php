@@ -14,14 +14,14 @@ function wgo_render_pickup_confirmation_button($order_id) {
     $confirmed = get_post_meta($order_id, 'wgo_pickup_confirmed_' . $user_id, true);
 
     if ($confirmed) {
-        echo '<p class="wgo-confirmed">' . esc_html__('Hai già confermato il ritiro.', 'wp-gas-main') . '</p>';
+        echo '<p class="wgo-confirmed">' . esc_html__('Hai già confermato il ritiro.', 'WP-GAS-main') . '</p>';
         return;
     }
 
     echo '<form method="post" class="wgo-confirm-form">';
     wp_nonce_field('wgo_confirm_pickup_' . $order_id, 'wgo_pickup_nonce');
     echo '<input type="hidden" name="wgo_order_id" value="' . esc_attr($order_id) . '">';
-    echo '<button type="submit">' . esc_html__('Conferma ritiro', 'wp-gas-main') . '</button>';
+    echo '<button type="submit">' . esc_html__('Conferma ritiro', 'WP-GAS-main') . '</button>';
     echo '</form>';
 }
 
@@ -32,10 +32,8 @@ function wgo_handle_pickup_confirmation() {
         return;
     }
 
-    $nonce_raw = isset($_POST['wgo_pickup_nonce']) ? wp_unslash($_POST['wgo_pickup_nonce']) : '';
-    $nonce = sanitize_text_field($nonce_raw);
-    $order_id_raw = isset($_POST['wgo_order_id']) ? wp_unslash($_POST['wgo_order_id']) : '';
-    $order_id = intval($order_id_raw);
+    $nonce = isset($_POST['wgo_pickup_nonce']) ? sanitize_text_field(wp_unslash($_POST['wgo_pickup_nonce'])) : '';
+    $order_id = isset($_POST['wgo_order_id']) ? intval(wp_unslash($_POST['wgo_order_id'])) : 0;
 
     if (!$nonce || !$order_id || !wp_verify_nonce($nonce, 'wgo_confirm_pickup_' . $order_id)) {
         return;
