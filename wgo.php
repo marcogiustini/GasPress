@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: Group Orders for BuddyPress and WooCommerce
- * Description: Gestione di ordini collettivi nei gruppi BuddyPress con wallet condivisi, punti di ritiro e compatibilità multi-vendor.
+ * Plugin Name: Gruppi di acquisto solidali
+ * Description: Gestione di ordini collettivi in Buddypress e Woocommerce
  * Version: 1.0.0
  * Author: Marco Giustini
  * Author URI: https://github.com/marcogiustini
