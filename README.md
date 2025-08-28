@@ -4,11 +4,11 @@
 - Requires at least: 6.0  
 - Tested up to: 6.8  
 - Requires PHP: 7.4  
-- Stable tag: 1.0  
+- Stable tag: 1.0.0  
 - License: GPLv2 or later  
 - License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-## Description 
+## Short Description 
 
 Questo plugin consente ai gruppi BuddyPress di creare ordini collettivi con prodotti WooCommerce, gestire wallet condivisi, confermare ritiri e smistare automaticamente gli ordini ai venditori Dokan.
 
