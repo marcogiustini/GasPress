@@ -1,4 +1,8 @@
 <?php
+/**
+ * Interfaccia frontend per partecipazione all’ordine collettivo
+ */
+
 defined('ABSPATH') || exit;
 
 function wgo_render_order_ui($group_id) {
@@ -46,6 +50,7 @@ function wgo_handle_order_submission() {
         }
     }
 
-    // Salvataggio ordine collettivo
+    // Esegui logica di salvataggio ordine collettivo
+    // es: wgo_save_group_order($group_id, $selected_products, $quantities);
 }
 add_action('init', 'wgo_handle_order_submission');
