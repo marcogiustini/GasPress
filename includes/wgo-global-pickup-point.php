@@ -1,28 +1,32 @@
 <?php
-function wgo_set_global_pickup_point($address) {
-    update_option('wgo_global_pickup_point', sanitize_text_field($address));
-}
+/**
+ * Impostazione punto di ritiro globale per ordini collettivi
+ */
 
-function wgo_get_global_pickup_point() {
-    return get_option('wgo_global_pickup_point');
-}
+defined('ABSPATH') || exit;
 
-function wgo_render_global_pickup_settings() {
-    if (!current_user_can('manage_woocommerce')) return;
+// 🧩 Aggiunge il campo nel backend WooCommerce
+add_action('woocommerce_product_options_general_product_data', function () {
+    woocommerce_wp_text_input([
+        'id'          => 'wgo_global_pickup',
+        'label'       => esc_html__('Punto di ritiro globale', 'WP-GAS-main'),
+        'desc_tip'    => true,
+        'description' => esc_html__('Specificare un punto di ritiro valido per tutti gli ordini di questo prodotto.', 'WP-GAS-main'),
+    ]);
+    wp_nonce_field('wgo_save_global_pickup', 'wgo_global_pickup_nonce');
+});
 
-    echo '<div class="wrap"><h2>Punto di Ritiro Generale</h2>';
-    echo '<form method="post">';
-    echo '<input type="text" name="wgo_global_pickup" value="' . esc_attr(wgo_get_global_pickup_point()) . '" />';
-    echo '<input type="submit" name="wgo_save_global_pickup" value="Salva" />';
-    echo '</form>';
-
-    if (isset($_POST['wgo_save_global_pickup'])) {
-        wgo_set_global_pickup_point($_POST['wgo_global_pickup']);
-        echo '<p>Punto di ritiro aggiornato.</p>';
+// 💾 Salvataggio sicuro del metadato
+add_action('woocommerce_process_product_meta', function ($post_id) {
+    if (
+        !isset($_POST['wgo_global_pickup_nonce']) ||
+        !wp_verify_nonce($_POST['wgo_global_pickup_nonce'], 'wgo_save_global_pickup')
+    ) {
+        return;
     }
 
-    echo '</div>';
-}
-add_action('admin_menu', function () {
-    add_submenu_page('woocommerce', 'Punto di Ritiro', 'Punto di Ritiro', 'manage_woocommerce', 'wgo-pickup-settings', 'wgo_render_global_pickup_settings');
+    if (isset($_POST['wgo_global_pickup'])) {
+        $pickup = sanitize_text_field(wp_unslash($_POST['wgo_global_pickup']));
+        update_post_meta($post_id, 'wgo_global_pickup', $pickup);
+    }
 });
