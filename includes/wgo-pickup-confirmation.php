@@ -26,8 +26,9 @@ function wgo_render_pickup_confirmation_button($order_id) {
 }
 
 function wgo_handle_pickup_confirmation() {
-    $method = isset($_SERVER['REQUEST_METHOD']) ? strtoupper($_SERVER['REQUEST_METHOD']) : '';
-    if ($method !== 'POST') {
+    $method_raw = isset($_SERVER['REQUEST_METHOD']) ? wp_unslash($_SERVER['REQUEST_METHOD']) : '';
+    $method = sanitize_text_field($method_raw);
+    if (strtoupper($method) !== 'POST') {
         return;
     }
 
