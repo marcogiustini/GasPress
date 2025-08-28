@@ -2,73 +2,117 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Woocommerce Groups Orders for Buddypress\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-27 15:45+0200\n"
+"POT-Creation-Date: 2025-08-28 12:00+0200\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Copilot\n"
 
-#: includes/frontend-order-ui.php:10
-msgid "Ordine collettivo attivo"
+#: includes/wgo-admin-dashboard.php:10
+msgid "Gestione Ordini Collettivi"
 msgstr ""
 
-#: includes/frontend-order-ui.php:20
-msgid "Versa Fondi"
+#: includes/wgo-admin-suggestions.php:5
+msgid "Suggerimenti prodotti dal gruppo"
 msgstr ""
 
-#: includes/frontend-order-ui.php:35
-msgid "Saldo insufficiente nel tuo wallet."
+#: includes/wgo-confirmation.php:24
+msgid "Conferma ritiro"
 msgstr ""
 
-#: includes/close-order.php:50
-msgid "Ordine chiuso con successo."
+#: includes/wgo-confirmation.php:29
+msgid "Ritiro confermato con successo."
 msgstr ""
 
-#: includes/group-shop-tab.php:15
-msgid "Vetrina del Gruppo"
+#: includes/wgo-group-pickup-point.php:15
+msgid "Punto di Ritiro del Gruppo"
 msgstr ""
 
-#: includes/group-shop-tab.php:40
-msgid "Solo per questo gruppo"
+#: includes/wgo-group-pickup-point.php:25
+msgid "Punto di ritiro aggiornato."
 msgstr ""
 
-#: includes/admin-suggestions.php:10
-msgid "Suggerimenti dai membri"
+#: includes/wgo-global-pickup-point.php:20
+msgid "Punto di Ritiro Generale"
 msgstr ""
 
-#: includes/admin-suggestions.php:45
-msgid "Prodotto aggiunto alla vetrina."
+#: includes/wgo-global-pickup-point.php:30
+msgid "Punto di ritiro aggiornato."
 msgstr ""
 
-#: includes/pickup-confirmation.php:10
-msgid "Conferma Ritiro"
+#: includes/wgo-frontend-order-ui.php:12
+msgid "Partecipa all’ordine collettivo"
 msgstr ""
 
-#: includes/pickup-confirmation.php:20
-msgid "Hai già confermato il ritiro"
+#: includes/wgo-frontend-order-ui.php:28
+msgid "Partecipazione registrata con successo."
 msgstr ""
 
-#: includes/pickup-confirmation.php:25
-msgid "Ritiro confermato. Grazie!"
+#: includes/wgo-frontend-order-ui.php:35
+msgid "Seleziona almeno un prodotto per partecipare all’ordine."
 msgstr ""
 
-#: includes/pickup-history.php:10
-msgid "Storico Ritiri"
+#: includes/wgo-pickup-history.php:10
+msgid "Storico ritiri ordine"
 msgstr ""
 
-#: includes/pickup-history.php:25
-msgid "Non ancora ritirato"
+#: includes/wgo-pickup-history.php:18
+msgid "Ritirato"
 msgstr ""
 
-#: includes/pickup-notifications.php:15
+#: includes/wgo-pickup-history.php:21
+msgid "Non ritirato"
+msgstr ""
+
+#: includes/wgo-notifications.php:10
+msgid "Hai partecipato all’ordine collettivo."
+msgstr ""
+
+#: includes/wgo-notifications.php:11
+msgid "Hai confermato il ritiro del tuo ordine."
+msgstr ""
+
+#: includes/wgo-pickup-notifications.php:20
 msgid "Promemoria: ritira il tuo ordine"
 msgstr ""
 
-#: includes/pickup-notifications.php:16
+#: includes/wgo-pickup-notifications.php:21
 msgid "Hai ancora un ordine da ritirare presso il punto di distribuzione del gruppo."
 msgstr ""
 
-#: includes/pickup-notifications.php:30
-msgid "📦 Ritirato"
+#: includes/wgo-dokan-vendor-notifications.php:30
+msgid "Ordine collettivo da Gruppo"
+msgstr ""
+
+#: includes/wgo-dokan-vendor-dashboard.php:10
+msgid "Ordini Collettivi Assegnati"
+msgstr ""
+
+#: includes/wgo-dokan-vendor-dashboard.php:12
+msgid "Punto di Ritiro"
+msgstr ""
+
+#: includes/wgo-dokan-vendor-dashboard.php:13
+msgid "Prodotti"
+msgstr ""
+
+#: includes/wgo-product-metabox.php:15
+msgid "Gruppo BuddyPress"
+msgstr ""
+
+#: includes/wgo-product-metabox.php:25
+msgid "Nessun gruppo"
+msgstr ""
+
+#: includes/wgo-email-dokan-vendor-summary.php:10
+msgid "Riepilogo ordini collettivi ricevuti"
+msgstr ""
+
+#: includes/wgo-email-dokan-vendor-summary.php:20
+msgid "Grazie per la collaborazione!"
+msgstr ""
+
+#: includes/wgo-email-dokan-vendor-summary.php:21
+msgid "Il team Mercato Sociale"
 msgstr ""
