@@ -9,7 +9,7 @@ defined('ABSPATH') || exit;
 function wgo_add_group_metabox() {
     add_meta_box(
         'wgo_group_metabox',
-        esc_html__('Gruppo BuddyPress', 'WP-GAS-main'),
+        esc_html__('Gruppo', 'gaspress-main'),
         'wgo_render_group_metabox',
         'product',
         'side',
@@ -25,9 +25,9 @@ function wgo_render_group_metabox($post) {
 
     wp_nonce_field('wgo_save_group_meta', 'wgo_group_meta_nonce');
 
-    echo '<label for="wgo_group_id">' . esc_html__('Seleziona gruppo:', 'WP-GAS-main') . '</label><br>';
+    echo '<label for="wgo_group_id">' . esc_html__('Seleziona gruppo:', 'gaspress-main') . '</label><br>';
     echo '<select name="wgo_group_id" id="wgo_group_id">';
-    echo '<option value="">' . esc_html__('Nessun gruppo', 'WP-GAS-main') . '</option>';
+    echo '<option value="">' . esc_html__('Nessun gruppo', 'gaspress-main') . '</option>';
 
     foreach ($groups['groups'] as $group) {
         $selected = selected($selected_group, $group->id, false);
