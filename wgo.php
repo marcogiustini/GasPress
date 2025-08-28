@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WP GAS
+Plugin Name: WP GAS 
 Description: Gestione ordini per gruppi di acquisto solidali con BuddyPress, WooCommerce, Wallet e Dokan.
 Version: 1.0.0
 Author: Marco Giustini
@@ -36,6 +36,6 @@ add_action('wp_enqueue_scripts', function () {
 add_action('admin_init', function () {
     if (!function_exists('wc_get_product') || !function_exists('groups_get_group_members')) {
         deactivate_plugins(plugin_basename(__FILE__));
-        wp_die(__('Questo plugin richiede WooCommerce e BuddyPress attivi.', 'WP-GAS-main'));
+        wp_die(esc_html__('Questo plugin richiede WooCommerce e BuddyPress attivi.', 'WP-GAS-main'));
     }
 });
