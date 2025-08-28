@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WP GAS – Gruppi di acquisto solidali
+Plugin Name: GasPress
 Description: Gestione ordini per gruppi di acquisto solidali con BuddyPress, WooCommerce, Wallet e Dokan.
 Version: 1.0.0
 Author: Marco Giustini
