@@ -8,65 +8,35 @@
 - License: GPLv2 or later
 - License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Ordini collettivi nei gruppi BuddyPress con wallet condivisi, shop filtrati, logistica e conferma ritiro. Pensato per comunità, GAS e gruppi di acquisto.
+## Descrizione
 
-## Description 
+Ordini collettivi Woocommerce nei gruppi BuddyPress con wallet condivisi, punti di ritiro, con compatibilità multi-vendor (Dokan). Pensato per comunità, GAS e gruppi di acquisto.
 
-Questo plugin consente ai gruppi BuddyPress di organizzare ordini collettivi su WooCommerce. Ogni gruppo può:
+## Funzionalità principali
 
-- Visualizzare una vetrina prodotti filtrata
-- Raccogliere fondi dai membri tramite wallet virtuali
-- Creare ordini collettivi con partecipazione individuale
-- Gestire punti di ritiro (per gruppo o globali)
-- Confermare il ritiro e visualizzare badge 
-- Inviare notifiche automatiche e promemoria
+- Creazione di ordini collettivi all’interno dei gruppi BuddyPress
+- Assegnazione prodotti ai gruppi tramite metabox
+- Partecipazione degli utenti con quantità personalizzate
+- Aggregazione automatica degli ordini
+- Chiusura ordine con smistamento ai venditori Dokan
+- Gestione punti di ritiro globali e per gruppo
+- Conferma ritiro da parte degli utenti
+- Badge visivo “Ritirato” / “Da ritirare”
+- Storico ritiri e promemoria automatici
+- Wallet virtuale per utenti e gruppi
+- Email riepilogative ai venditori
+- Dashboard Dokan con ordini collettivi assegnati
 
-Pensato per gruppi di acquisto solidale (GAS), comunità locali, associazioni e progetti collaborativi.
+## Compatibilità
 
-## Installation 
+- ✅ WooCommerce
+- ✅ BuddyPress
+- ✅ Dokan Multi-Vendor
+- ✅ Wallet for Woocommerce
+- ✅ WordPress 6.x
 
-1. Carica la cartella del plugin in `wp-content/plugins/`
-2. Attiva il plugin tramite il menu "Plugin" in WordPress
-3. Assicurati che WooCommerce e BuddyPress siano attivi
-4. Vai nella pagina di un gruppo BuddyPress per iniziare
+## Installazione
 
-## Frequently Asked Questions 
-
-= È compatibile con Dokan o altri marketplace? =
-Il plugin è compatibile con WooCommerce standard. Per marketplace multi-vendor, alcune funzioni potrebbero richiedere adattamenti.
-
-= Dove vengono salvati i fondi dei wallet? =
-I fondi sono gestiti come metadati utente e gruppo. Non gestisce transazioni reali, ma simula flussi interni.
-
-= Posso personalizzare i badge o i punti di ritiro? =
-Sì, puoi modificare gli stili CSS e usare i filtri disponibili nel codice.
-
-## Screenshots 
-
-1. Vetrina prodotti filtrata per gruppo
-2. Form di partecipazione all’ordine
-3. Storico ritiri con badge visivi
-4. Pannello amministratore del gruppo
-
-## Changelog 
-
-= 1.0 =
-* Versione iniziale
-* Ordini collettivi per gruppi BuddyPress
-* Wallet condivisi e versamenti
-* Punti di ritiro per gruppo e globali
-* Conferma ritiro con badge
-* Notifiche automatiche e promemoria
-
-## Upgrade Notice 
-
-= 1.0 =
-Prima versione stabile. Assicurati che WooCommerce e BuddyPress siano attivi.
-
-## Localization 
-
-Il plugin è completamente localizzato. File `.pot` incluso in `/languages/wgo.pot`.
-
-## License 
-
-Questo plugin è distribuito sotto la licenza GPLv2 o successiva.
+1. Clona o scarica il plugin:
+   ```bash
+   git clone https://github.com/marcogiustini/woocommerce-groups-orders-for-buddypress.git
