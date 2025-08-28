@@ -8,7 +8,7 @@ defined('ABSPATH') || exit;
 function wgo_render_order_ui($group_id) {
     $products = wgo_get_group_products($group_id);
     if (empty($products)) {
-        echo '<p>' . esc_html__('Nessun prodotto disponibile per questo gruppo.', 'wp-gas-main') . '</p>';
+        echo '<p>' . esc_html__('Nessun prodotto disponibile per questo gruppo.', 'WP-GAS-main') . '</p>';
         return;
     }
 
@@ -27,7 +27,7 @@ function wgo_render_order_ui($group_id) {
     }
     echo '</ul>';
 
-    echo '<button type="submit">' . esc_html__('Partecipa all’ordine collettivo', 'wp-gas-main') . '</button>';
+    echo '<button type="submit">' . esc_html__('Partecipa all’ordine collettivo', 'WP-GAS-main') . '</button>';
     echo '</form>';
 }
 
@@ -38,8 +38,7 @@ function wgo_handle_order_submission() {
         return;
     }
 
-    $nonce_raw = isset($_POST['wgo_order_nonce']) ? wp_unslash($_POST['wgo_order_nonce']) : '';
-    $nonce = sanitize_text_field($nonce_raw);
+    $nonce = isset($_POST['wgo_order_nonce']) ? sanitize_text_field(wp_unslash($_POST['wgo_order_nonce'])) : '';
     if (!$nonce || !wp_verify_nonce($nonce, 'wgo_submit_order')) {
         return;
     }
