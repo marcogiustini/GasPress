@@ -1,3 +1,4 @@
+<?php
 function wgo_add_admin_tab($tabs) {
     $tabs['group_orders'] = [
         'name' => 'Ordini Collettivi',
@@ -10,5 +11,7 @@ function wgo_add_admin_tab($tabs) {
 add_filter('groups_admin_tabs', 'wgo_add_admin_tab');
 
 function wgo_render_admin_dashboard() {
-    echo '<h2>Gestione Ordini Collettivi</h2>';
+    echo '<div class="wgo-admin-dashboard"><h3>Gestione Ordini Collettivi</h3>';
+    echo '<p>Qui puoi monitorare e chiudere gli ordini attivi del gruppo.</p>';
+    echo '</div>';
 }
