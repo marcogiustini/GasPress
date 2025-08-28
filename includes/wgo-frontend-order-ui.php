@@ -8,7 +8,7 @@ defined('ABSPATH') || exit;
 function wgo_render_order_ui($group_id) {
     $products = wgo_get_group_products($group_id);
     if (empty($products)) {
-        echo '<p>' . esc_html__('Nessun prodotto disponibile per questo gruppo.', 'WP-GAS-main') . '</p>';
+        echo '<p>' . esc_html__('Nessun prodotto disponibile per questo gruppo.', 'wpgas') . '</p>';
         return;
     }
 
@@ -27,21 +27,28 @@ function wgo_render_order_ui($group_id) {
     }
     echo '</ul>';
 
-    echo '<button type="submit">' . esc_html__('Partecipa all’ordine collettivo', 'WP-GAS-main') . '</button>';
+    echo '<button type="submit">' . esc_html__('Partecipa all’ordine collettivo', 'wpgas') . '</button>';
     echo '</form>';
 }
 
 function wgo_handle_order_submission() {
-    if ($_SERVER['REQUEST_METHOD'] !== 'POST') return;
-    if (!isset($_POST['wgo_order_nonce']) || !wp_verify_nonce($_POST['wgo_order_nonce'], 'wgo_submit_order')) return;
+    $method = isset($_SERVER['REQUEST_METHOD']) ? strtoupper($_SERVER['REQUEST_METHOD']) : '';
+    if ($method !== 'POST') return;
 
-    $selected_products = isset($_POST['wgo_selected_products']) ? array_map('intval', (array) $_POST['wgo_selected_products']) : [];
-    $quantities_raw = isset($_POST['wgo_qty']) ? $_POST['wgo_qty'] : [];
+    if (
+        !isset($_POST['wgo_order_nonce']) ||
+        !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['wgo_order_nonce'])), 'wgo_submit_order')
+    ) {
+        return;
+    }
+
+    $selected_products = isset($_POST['wgo_selected_products']) ? array_map('intval', (array) wp_unslash($_POST['wgo_selected_products'])) : [];
+    $quantities_raw = isset($_POST['wgo_qty']) ? wp_unslash($_POST['wgo_qty']) : [];
 
     $quantities = [];
     foreach ($quantities_raw as $product_id => $qty) {
         $product_id = intval($product_id);
-        $qty = intval(wp_unslash($qty));
+        $qty = intval($qty);
         if ($product_id > 0 && $qty > 0) {
             $quantities[$product_id] = $qty;
         }
