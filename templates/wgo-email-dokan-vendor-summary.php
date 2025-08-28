@@ -1,9 +1,10 @@
 <?php
 /**
- * Email riepilogativa per venditori Dokan sugli ordini collettivi ricevuti
+ * Template email riepilogativa per venditori Dokan
  */
 
-// 📬 Invia email riepilogativa a un singolo venditore
+defined('ABSPATH') || exit;
+
 function wgo_send_vendor_summary_email($vendor_id) {
     $orders = wgo_get_group_orders_for_vendor($vendor_id);
     if (empty($orders)) return;
@@ -20,46 +21,26 @@ function wgo_send_vendor_summary_email($vendor_id) {
         $group_id = get_post_meta($order->get_id(), 'wgo_group_id', true);
         $items = wgo_group_items_by_vendor($order)[$vendor_id] ?? [];
 
-        $message .= "🛒 Ordine #" . $order->get_id() . " (Gruppo #" . $group_id . ")\n";
-        $message .= "📍 Punto di ritiro: " . $pickup . "\n";
+        $message .= "🛒 Ordine #" . esc_html($order->get_id()) . " (Gruppo #" . esc_html($group_id) . ")\n";
+        $message .= "📍 Punto di ritiro: " . esc_html($pickup) . "\n";
         $message .= "📦 Prodotti:\n";
 
         foreach ($items as $item) {
-            $message .= "- " . $item['name'] . " × " . $item['qty'] . " (€" . number_format($item['price'], 2) . ")\n";
+            $name = isset($item['name']) ? sanitize_text_field($item['name']) : '';
+            $qty = isset($item['qty']) ? intval($item['qty']) : 0;
+            $price = isset($item['price']) ? floatval($item['price']) : 0.00;
+
+            $message .= "- {$name} × {$qty} (€" . number_format($price, 2) . ")\n";
         }
 
         $message .= "\n";
     }
 
-    $message .= "Grazie per la collaborazione!\nIl team Mercato Sociale";
+    $message .= "Grazie per la collaborazione!\nIl team Mercato Solidale";
 
-    wp_mail($vendor->user_email, __('Riepilogo ordini collettivi ricevuti', 'wgo'), $message);
-}
-
-// 🔁 Invia email a tutti i venditori coinvolti
-function wgo_send_all_vendor_summaries() {
-    $orders = get_posts([
-        'post_type' => 'shop_order',
-        'post_status' => 'any',
-        'numberposts' => -1,
-        'meta_query' => [[
-            'key' => 'wgo_vendor_ids',
-            'compare' => 'EXISTS'
-        ]]
-    ]);
-
-    $vendors = [];
-
-    foreach ($orders as $order_post) {
-        $vendor_ids = get_post_meta($order_post->ID, 'wgo_vendor_ids', true);
-        if (is_array($vendor_ids)) {
-            foreach ($vendor_ids as $vendor_id) {
-                $vendors[$vendor_id] = true;
-            }
-        }
-    }
-
-    foreach (array_keys($vendors) as $vendor_id) {
-        wgo_send_vendor_summary_email($vendor_id);
-    }
+    wp_mail(
+        $vendor->user_email,
+        __('Riepilogo ordini collettivi ricevuti', 'WP-GAS-main'),
+        $message
+    );
 }
