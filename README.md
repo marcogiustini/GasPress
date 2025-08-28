@@ -1,5 +1,5 @@
 # WP GAS
-Gestione ordini per gruppi di acqusto solidali.
+Gestione ordini per gruppi di acquisto solidali.
 
 **Contributors:** marcogiustini  
 **Tags:** buddypress, woocommerce, dokan, wallet, gas 
