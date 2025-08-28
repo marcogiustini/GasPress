@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WP GAS 
+Plugin Name: WP GAS – Gruppi di acquisto solidali
 Description: Gestione ordini per gruppi di acquisto solidali con BuddyPress, WooCommerce, Wallet e Dokan.
 Version: 1.0.0
 Author: Marco Giustini
@@ -21,10 +21,26 @@ foreach (glob(plugin_dir_path(__FILE__) . 'includes/wgo-*.php') as $file) {
     require_once $file;
 }
 
-// 🎨 Carica CSS e JS
-add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('wgo-style', plugin_dir_url(__FILE__) . 'assets/css/wgo-style.css');
-    wp_enqueue_script('wgo-script', plugin_dir_url(__FILE__) . 'assets/js/wgo-script.js', [], false, true);
+// 🔧 Recupera versione plugin dinamicamente
+$plugin_data = get_file_data(__FILE__, ['Version' => 'Version']);
+$plugin_version = $plugin_data['Version'];
+
+// 🎨 Carica CSS e JS con versione esplicita
+add_action('wp_enqueue_scripts', function () use ($plugin_version) {
+    wp_enqueue_style(
+        'wgo-style',
+        plugin_dir_url(__FILE__) . 'assets/css/wgo-style.css',
+        [],
+        $plugin_version
+    );
+
+    wp_enqueue_script(
+        'wgo-script',
+        plugin_dir_url(__FILE__) . 'assets/js/wgo-script.js',
+        [],
+        $plugin_version,
+        true
+    );
 });
 
 // 🔍 Verifica dipendenze minime
