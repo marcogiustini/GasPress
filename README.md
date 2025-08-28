@@ -1,6 +1,6 @@
-# WP GAS – Gruppi di acquisto solidali 
+# WP GAS
 Contributors: marcogiustini  
-Tags: woocommerce, buddypress, dokan, wallet, gruppi di acquisto, ordini collettivi  
+Tags: woocommerce, buddypress, dokan, gruppi di acquisto, ordini collettivi  
 Requires at least: 6.0  
 Tested up to: 6.8  
 Requires PHP: 7.4  
