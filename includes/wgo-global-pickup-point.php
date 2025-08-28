@@ -9,9 +9,9 @@ defined('ABSPATH') || exit;
 add_action('woocommerce_product_options_general_product_data', function () {
     woocommerce_wp_text_input([
         'id'          => 'wgo_global_pickup',
-        'label'       => esc_html__('Punto di ritiro globale', 'wpgas'),
+        'label'       => esc_html__('Punto di ritiro globale', 'WP-GAS-main'),
         'desc_tip'    => true,
-        'description' => esc_html__('Specificare un punto di ritiro valido per tutti gli ordini di questo prodotto.', 'wpgas'),
+        'description' => esc_html__('Specificare un punto di ritiro valido per tutti gli ordini di questo prodotto.', 'WP-GAS-main'),
     ]);
     wp_nonce_field('wgo_save_global_pickup', 'wgo_global_pickup_nonce');
 });
