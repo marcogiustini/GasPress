@@ -1,27 +1,33 @@
 <?php
-function wgo_set_group_pickup_point($group_id, $address) {
-    update_group_meta($group_id, 'wgo_group_pickup_point', sanitize_text_field($address));
+/**
+ * Impostazione punto di ritiro per gruppi BuddyPress
+ */
+
+defined('ABSPATH') || exit;
+
+// 🧩 Aggiunge il campo nel backend del gruppo BuddyPress
+function wgo_render_group_pickup_field($group_id) {
+    $pickup = groups_get_groupmeta($group_id, 'wgo_group_pickup');
+    ?>
+    <label for="wgo_group_pickup"><?php echo esc_html__('Punto di ritiro del gruppo:', 'WP-GAS-main'); ?></label><br>
+    <input type="text" name="wgo_group_pickup" id="wgo_group_pickup" value="<?php echo esc_attr($pickup); ?>">
+    <?php wp_nonce_field('wgo_save_group_pickup', 'wgo_group_pickup_nonce'); ?>
+    <?php
 }
+add_action('groups_custom_group_fields_editable', 'wgo_render_group_pickup_field');
 
-function wgo_get_group_pickup_point($group_id) {
-    return get_group_meta($group_id, 'wgo_group_pickup_point', true);
-}
+// 💾 Salvataggio sicuro del metadato
+function wgo_save_group_pickup_field($group_id) {
+    if (
+        !isset($_POST['wgo_group_pickup_nonce']) ||
+        !wp_verify_nonce($_POST['wgo_group_pickup_nonce'], 'wgo_save_group_pickup')
+    ) {
+        return;
+    }
 
-function wgo_render_group_pickup_form() {
-    if (!bp_is_group() || !groups_is_user_admin(bp_loggedin_user_id(), bp_get_group_id())) return;
-
-    $group_id = bp_get_group_id();
-    $current = wgo_get_group_pickup_point($group_id);
-
-    echo '<form method="post">';
-    echo '<label for="wgo_group_pickup">Punto di Ritiro del Gruppo</label><br>';
-    echo '<input type="text" name="wgo_group_pickup" value="' . esc_attr($current) . '" />';
-    echo '<input type="submit" name="wgo_save_group_pickup" value="Salva" />';
-    echo '</form>';
-
-    if (isset($_POST['wgo_save_group_pickup'])) {
-        wgo_set_group_pickup_point($group_id, $_POST['wgo_group_pickup']);
-        echo '<p>Punto di ritiro aggiornato.</p>';
+    if (isset($_POST['wgo_group_pickup'])) {
+        $pickup = sanitize_text_field(wp_unslash($_POST['wgo_group_pickup']));
+        groups_update_groupmeta($group_id, 'wgo_group_pickup', $pickup);
     }
 }
-add_action('bp_after_group_home_content', 'wgo_render_group_pickup_form');
+add_action('groups_custom_group_fields_updated', 'wgo_save_group_pickup_field');
