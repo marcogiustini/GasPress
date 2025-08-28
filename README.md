@@ -1,15 +1,14 @@
-# WP GAS
-Gestione ordini per gruppi di acquisto solidali
-- Contributors: Marco Giustini  
-- Tags: woocommerce, buddypress, dokan, wallet, gruppi di acquisto, ordini collettivi  
-- Requires at least: 6.0  
-- Tested up to: 6.8  
-- Requires PHP: 7.4  
-- Stable tag: 1.0.0  
-- License: GPLv2 or later  
-- License URI: https://www.gnu.org/licenses/gpl-2.0.html  
+# WP GAS – Gruppi di acquisto solidali 
+Contributors: marcogiustini  
+Tags: woocommerce, buddypress, dokan, wallet, gruppi di acquisto, ordini collettivi  
+Requires at least: 6.0  
+Tested up to: 6.8  
+Requires PHP: 7.4  
+Stable tag: 1.0.0  
+License: GPLv2 or later  
+License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
-Gestione ordini collettivi per gruppi di acquisto solidali con BuddyPress, WooCommerce, Wallet e Dokan.
+Gestione ordini collettivi per gruppi di acquisto solidali con WooCommerce, BuddyPress, Dokan e Wallet.
 
 ## Description 
 
@@ -24,16 +23,16 @@ WP GAS è un plugin pensato per facilitare la gestione degli ordini collettivi a
 
 ## Installation 
 
-1. Carica la cartella `WP-GAS-main` nella directory `/wp-content/plugins/`
+1. Carica la cartella `wp-gas-main` nella directory `/wp-content/plugins/`
 2. Attiva il plugin tramite il menu "Plugin" di WordPress
 3. Configura i gruppi BuddyPress e i prodotti WooCommerce
 
 ## Frequently Asked Questions 
 
-### È compatibile con WooCommerce multivendor? =
+- È compatibile con WooCommerce multivendor? =
 Sì, il plugin è compatibile con Dokan e altri sistemi multivendor.
 
-### Posso personalizzare i punti di ritiro? =
+- Posso personalizzare i punti di ritiro? =
 Certo. Puoi definire punti di ritiro globali, per gruppo o per venditore.
 
 ## Changelog 
@@ -41,7 +40,7 @@ Certo. Puoi definire punti di ritiro globali, per gruppo o per venditore.
 = 1.0.0 =
 * Versione iniziale stabile del plugin
 
-## Upgrade Notice
+## Upgrade Notice 
 
 = 1.0.0 =
 Versione stabile con supporto per BuddyPress, WooCommerce, Dokan e Wallet.
