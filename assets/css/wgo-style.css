@@ -1,140 +1,81 @@
-/* === Badge di ritiro === */
-.wgo-pickup-badge {
-  display: inline-block;
-  padding: 2px 6px;
-  font-size: 11px;
-  border-radius: 3px;
-  margin-left: 6px;
-  font-weight: bold;
+/* === WGO Plugin Styles === */
+
+.wgo-order-form,
+.wgo-confirm-form,
+.wgo-pickup-history,
+.wgo-suggestions-admin,
+.wgo-admin-dashboard {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
 }
 
-.wgo-pickup-badge.confirmed {
-  background-color: #2ecc71;
-  color: #fff;
+.wgo-order-form h4,
+.wgo-pickup-history h4,
+.wgo-admin-dashboard h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333;
 }
 
-.wgo-pickup-badge.pending {
-  background-color: #f39c12;
-  color: #fff;
+.wgo-order-form input[type="number"],
+.wgo-order-form input[type="text"],
+.wgo-confirm-form input[type="submit"],
+.wgo-order-form input[type="submit"] {
+    padding: 6px;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
 }
 
-/* === Tabelle di riepilogo === */
-.group-suggestions-table,
-.group-order-table,
-.group-pickup-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
+.wgo-success {
+    color: #155724;
+    background-color: #d4edda;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
 }
 
-.group-suggestions-table th,
-.group-order-table th,
-.group-pickup-table th,
-.group-suggestions-table td,
-.group-order-table td,
-.group-pickup-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+.wgo-confirmed {
+    color: #155724;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-.group-suggestions-table th,
-.group-order-table th,
-.group-pickup-table th {
-  background-color: #f5f5f5;
-  text-align: left;
+.wgo-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-left: 6px;
 }
 
-/* === Pulsanti filtro categoria === */
-.group-shop-filters {
-  margin-bottom: 15px;
+.wgo-badge-confirmed {
+    background-color: #d4edda;
+    color: #155724;
 }
 
-.group-shop-filters .filter-btn {
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  margin-right: 6px;
-  cursor: pointer;
-  border-radius: 4px;
-  font-size: 13px;
+.wgo-badge-pending {
+    background-color: #f8d7da;
+    color: #721c24;
 }
 
-.group-shop-filters .filter-btn:hover {
-  background-color: #2980b9;
+.wgo-pickup-history table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-/* === Form suggerimento prodotto === */
-#suggest-form {
-  margin-top: 15px;
-  background-color: #f9f9f9;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+.wgo-pickup-history th,
+.wgo-pickup-history td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
 }
 
-#suggest-form input[type="text"],
-#suggest-form textarea {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#suggest-form input[type="submit"] {
-  background-color: #27ae60;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-#suggest-form input[type="submit"]:hover {
-  background-color: #1e8449;
-}
-
-/* === Punto di ritiro === */
-.wgo-pickup-point {
-  background-color: #ecf0f1;
-  padding: 10px;
-  border-left: 4px solid #3498db;
-  margin-bottom: 20px;
-  font-size: 14px;
-}
-
-/* === Conferma ritiro visiva === */
-#pickup-status.confirmed {
-  color: #2ecc71;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-/* === Layout prodotti === */
-ul.products {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-ul.products li.product {
-  border: 1px solid #ddd;
-  padding: 10px;
-  width: calc(33.333% - 20px);
-  box-sizing: border-box;
-  border-radius: 6px;
-  background-color: #fff;
-}
-
-ul.products li.product h4 {
-  margin-top: 0;
-  font-size: 16px;
-}
-
-ul.products li.product p {
-  margin: 5px 0;
-  font-size: 14px;
+.wgo-pickup-history th {
+    background-color: #f1f1f1;
 }
