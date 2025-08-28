@@ -8,15 +8,15 @@ defined('ABSPATH') || exit;
 function wgo_render_vendor_dashboard($vendor_id) {
     $orders = wgo_get_group_orders_for_vendor($vendor_id);
     if (empty($orders)) {
-        echo '<p>' . esc_html__('Nessun ordine collettivo disponibile.', 'WP-GAS-main') . '</p>';
+        echo '<p>' . esc_html__('Nessun ordine collettivo disponibile.', 'gaspress-main') . '</p>';
         return;
     }
 
     echo '<table class="wgo-vendor-table">';
     echo '<thead><tr>';
     echo '<th>' . esc_html__('Ordine', 'WP-GAS-main') . '</th>';
-    echo '<th>' . esc_html__('Punto di ritiro', 'WP-GAS-main') . '</th>';
-    echo '<th>' . esc_html__('Prodotti', 'WP-GAS-main') . '</th>';
+    echo '<th>' . esc_html__('Punto di ritiro', 'gaspress-main') . '</th>';
+    echo '<th>' . esc_html__('Prodotti', 'gaspress-main') . '</th>';
     echo '</tr></thead>';
     echo '<tbody>';
 
