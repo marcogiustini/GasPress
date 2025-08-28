@@ -33,7 +33,7 @@ function wgo_send_vendor_summary_email($vendor_id) {
 
     $message .= "Grazie per la collaborazione!\nIl team Mercato Sociale";
 
-    wp_mail($vendor->user_email, 'Riepilogo ordini collettivi ricevuti', $message);
+    wp_mail($vendor->user_email, __('Riepilogo ordini collettivi ricevuti', 'wgo'), $message);
 }
 
 // 🔁 Invia email a tutti i venditori coinvolti
