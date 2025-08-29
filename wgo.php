@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: GasPress – Gruppi di acquisto solidali
+Plugin Name: GasPress
 Description: Gestione ordini per gruppi di acquisto solidali con BuddyPress, WooCommerce, Wallet e Dokan.
 Version: 1.0.0
 Author: Marco Giustini
 Author URI: https://github.com/marcogiustini
-Text Domain: GasPress-main
+Text Domain: gaspress-main
 Domain Path: /languages
 Requires at least: 6.0
 Tested up to: 6.8
@@ -31,6 +31,6 @@ add_action('wp_enqueue_scripts', function () use ($plugin_version) {
 add_action('admin_init', function () {
     if (!function_exists('wc_get_product') || !function_exists('groups_get_group_members')) {
         deactivate_plugins(plugin_basename(__FILE__));
-        wp_die(esc_html__('Questo plugin richiede WooCommerce e BuddyPress attivi.', 'GasPress-main'));
+        wp_die(esc_html__('Questo plugin richiede WooCommerce e BuddyPress attivi.', 'gaspress-main'));
     }
 });
