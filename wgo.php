@@ -31,6 +31,6 @@ add_action('wp_enqueue_scripts', function () use ($plugin_version) {
 add_action('admin_init', function () {
     if (!function_exists('wc_get_product') || !function_exists('groups_get_group_members')) {
         deactivate_plugins(plugin_basename(__FILE__));
-        wp_die(esc_html__('Questo plugin richiede WooCommerce e BuddyPress attivi.', 'gaspress-main'));
+        wp_die(esc_html__('Questo plugin richiede WooCommerce e BuddyPress attivi.', 'GasPress-main'));
     }
 });
