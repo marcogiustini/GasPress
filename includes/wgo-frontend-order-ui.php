@@ -4,7 +4,7 @@ defined('ABSPATH') || exit;
 function wgo_render_order_ui($group_id) {
     $products = wgo_get_group_products($group_id);
     if (empty($products)) {
-        echo '<p>' . esc_html__('Nessun prodotto disponibile per questo gruppo.', 'GasPress-main') . '</p>';
+        echo '<p>' . esc_html__('Nessun prodotto disponibile per questo gruppo.', 'gaspress-main') . '</p>';
         return;
     }
 
@@ -23,7 +23,7 @@ function wgo_render_order_ui($group_id) {
     }
     echo '</ul>';
 
-    echo '<button type="submit">' . esc_html__('Partecipa all’ordine collettivo', 'GasPress-main') . '</button>';
+    echo '<button type="submit">' . esc_html__('Partecipa all’ordine collettivo', 'gaspress-main') . '</button>';
     echo '</form>';
 }
 
